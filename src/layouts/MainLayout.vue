@@ -24,13 +24,27 @@
         class="bg-grey-3"
       >
         <q-scroll-area class="fit">
-          <div class="flex column q-pa-sm q-gutter-lg">
-            <router-link v-for="(rota, index) in linkRoute" :key="index"
-            :to="{name: rota.name}" class="flex justify-between" >
-              <span class="text-h5">{{rota.label}}</span>
-              <q-icon :name="rota.icon" size="2em" />
-            </router-link>
-          </div>
+          <q-list>
+            <template v-for="(menuItem, index) in menuList" :key="index">
+
+              <router-link :to="{name: menuItem.name}" class="links">
+                <q-item clickable  >
+                    <q-item-section avatar  id="nav">
+                      <router-link :to="{name: menuItem.name}" class="links">
+                      <q-icon :name="menuItem.icon" size="2em" />
+                      </router-link>
+                    </q-item-section>
+
+                    <q-item-section id="nav">
+                      <router-link :to="{name: menuItem.name}"
+                      class="links">{{ menuItem.label }}</router-link>
+                    </q-item-section>
+                </q-item>
+              </router-link>
+
+              <q-separator v-if="menuItem.separator" />
+            </template>
+          </q-list>
         </q-scroll-area>
       </q-drawer>
 
@@ -45,14 +59,26 @@ import { ref } from 'vue';
 
 const drawerRight = ref(false);
 
-const linkRoute = [
-  { name: 'home', label: 'Home', icon: 'fa-solid fa-house' },
-  { name: 'pageTwo', label: 'Página 02', icon: 'fa-solid fa-newspaper' },
-  { name: 'pageThree', label: 'Página 03', icon: 'fa-solid fa-newspaper' },
-  { name: 'form', label: 'Fomulário', icon: 'fa-brands fa-wpforms' },
+const menuList = [
+  {
+    name: 'home', label: 'Home', icon: 'fa-solid fa-house', separator: true,
+  },
+  {
+    name: 'pageTwo', label: 'Página 02', icon: 'fa-solid fa-newspaper', separator: false,
+  },
+  {
+    name: 'pageThree', label: 'Página 03', icon: 'fa-solid fa-newspaper', separator: true,
+  },
+  {
+    name: 'form', label: 'Fomulário', icon: 'fa-brands fa-wpforms', separator: false,
+  },
 ];
 </script >
 
-<style scoped>
+<style scoped lang="scss">
   a { text-decoration: none; color: gray;}
+
+  #nav .links.router-link-exact-active {
+  color: #1976d2;
+}
 </style>
