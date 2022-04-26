@@ -1,6 +1,7 @@
 import PageTwo from '../pages/PageTwo.vue';
 import PageThree from '../pages/PageThree.vue';
 import Form from '../pages/FormPage.vue';
+import Login from '../pages/LoginPage.vue';
 
 const routes = [
   {
@@ -11,6 +12,7 @@ const routes = [
       { path: '/pagina2', name: 'pageTwo', component: PageTwo },
       { path: '/pagina3', name: 'pageThree', component: PageThree },
       { path: '/form', name: 'form', component: Form },
+      { path: '/login', name: 'login', component: Login },
     ],
   },
 

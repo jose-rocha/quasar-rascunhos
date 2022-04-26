@@ -15,8 +15,16 @@
 
 <script setup>
 import { counterStore } from 'src/stores/count';
+import { useMeta } from 'quasar';
 
 const store = counterStore();
 const dataStore = store.$state;
+
+const metaData = {
+  title: 'Página 03',
+  titleTemplate: (title) => `${title}`,
+};
+
+useMeta(metaData);
 
 </script>

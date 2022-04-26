@@ -16,6 +16,7 @@
     </q-header>
 
      <q-drawer
+        behavior="mobile"
         side="right"
         v-model="drawerRight"
         bordered
@@ -29,13 +30,13 @@
 
               <router-link :to="{name: menuItem.name}" class="links">
                 <q-item clickable  >
-                    <q-item-section avatar  id="nav">
+                    <q-item-section avatar  class="nav">
                       <router-link :to="{name: menuItem.name}" class="links">
                       <q-icon :name="menuItem.icon" size="2em" />
                       </router-link>
                     </q-item-section>
 
-                    <q-item-section id="nav">
+                    <q-item-section class="nav">
                       <router-link :to="{name: menuItem.name}"
                       class="links">{{ menuItem.label }}</router-link>
                     </q-item-section>
@@ -72,13 +73,16 @@ const menuList = [
   {
     name: 'form', label: 'Fomulário', icon: 'fa-brands fa-wpforms', separator: false,
   },
+  {
+    name: 'login', label: 'login', icon: 'fa fa-arrow-right-to-bracket', separator: false,
+  },
 ];
 </script >
 
 <style scoped lang="scss">
-  a { text-decoration: none; color: gray;}
+a { text-decoration: none; color: gray;}
 
-  #nav .links.router-link-exact-active {
+.nav .links.router-link-exact-active {
   color: #1976d2;
 }
 </style>

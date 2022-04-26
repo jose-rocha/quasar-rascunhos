@@ -10,19 +10,20 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "pinia": "^2.0.11",
     "@quasar/extras": "^1.0.0",
+    "animate.css": "^4.1.1",
+    "pinia": "^2.0.11",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"
   },
   "devDependencies": {
+    "@quasar/app-vite": "^1.0.0-alpha.0",
+    "autoprefixer": "^10.4.2",
     "eslint": "^8.10.0",
-    "eslint-plugin-vue": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.20.1",
-    "@quasar/app-vite": "^1.0.0-alpha.0",
-    "autoprefixer": "^10.4.2"
+    "eslint-plugin-vue": "^8.5.0"
   },
   "engines": {
     "node": "^18 || ^16 || ^14.19",
