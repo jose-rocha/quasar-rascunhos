@@ -3,7 +3,7 @@
     <div class="q-pa-md" style="width: 500px">
 
       <q-form
-        @submit.prevent="onSubmit"
+        @submit="onSubmit"
         @reset="onReset"
         class="q-gutter-md"
       >
@@ -46,8 +46,10 @@
 <script setup>
 import { reactive } from 'vue';
 import { useQuasar, useMeta } from 'quasar';
+import { useRouter } from 'vue-router';
 
 const $q = useQuasar();
+const router = useRouter();
 
 const formValue = reactive({
   name: '',
@@ -76,6 +78,8 @@ const onSubmit = () => {
       icon: 'cloud_done',
       message: 'Enviado com sucesso!',
     });
+
+    router.push({ name: 'form2' });
 
     // setTimeout(() => {
     //   onReset();

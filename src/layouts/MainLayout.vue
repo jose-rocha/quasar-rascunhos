@@ -74,7 +74,10 @@ const menuList = [
     name: 'form', label: 'Fomulário', icon: 'fa-brands fa-wpforms', separator: false,
   },
   {
-    name: 'login', label: 'login', icon: 'fa fa-arrow-right-to-bracket', separator: false,
+    name: 'login', label: 'Login', icon: 'fa fa-arrow-right-to-bracket', separator: false,
+  },
+  {
+    name: 'tabs', label: 'Tabs', icon: 'fa-solid fa-table', separator: false,
   },
 ];
 </script >
