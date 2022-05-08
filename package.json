@@ -10,8 +10,10 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@pdftron/webviewer": "^8.4.1",
     "@quasar/extras": "^1.0.0",
     "animate.css": "^4.1.1",
+    "jspdf": "^2.5.1",
     "pinia": "^2.0.11",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",

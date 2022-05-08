@@ -79,7 +79,7 @@ const onSubmit = () => {
       message: 'Enviado com sucesso!',
     });
 
-    router.push({ name: 'form2' });
+    router.push({ name: 'formMes' });
 
     // setTimeout(() => {
     //   onReset();

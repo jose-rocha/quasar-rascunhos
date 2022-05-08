@@ -16,7 +16,7 @@
     </q-header>
 
      <q-drawer
-        behavior="mobile"
+        behavior="default"
         side="right"
         v-model="drawerRight"
         bordered
@@ -74,10 +74,22 @@ const menuList = [
     name: 'form', label: 'Fomulário', icon: 'fa-brands fa-wpforms', separator: false,
   },
   {
+    name: 'formMes', label: 'Fomulário Mês', icon: 'fa-solid fa-table', separator: false,
+  },
+  {
     name: 'login', label: 'Login', icon: 'fa fa-arrow-right-to-bracket', separator: false,
   },
   {
     name: 'tabs', label: 'Tabs', icon: 'fa-solid fa-table', separator: false,
+  },
+  {
+    name: 'StyleVHtml', label: 'StyleVHtml', icon: 'fa-solid fa-pen', separator: false,
+  },
+  {
+    name: 'pdf', label: 'PDF', icon: 'mdi-file-pdf-box', separator: false,
+  },
+  {
+    name: 'clip-board', label: 'copy', icon: 'mdi-content-copy', separator: false,
   },
 ];
 </script >
