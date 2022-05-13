@@ -89,6 +89,9 @@ const menuList = [
     name: 'pdf', label: 'PDF', icon: 'mdi-file-pdf-box', separator: false,
   },
   {
+    name: 'pdf2', label: 'PDF2', icon: 'mdi-file-pdf-box', separator: false,
+  },
+  {
     name: 'clip-board', label: 'copy', icon: 'mdi-content-copy', separator: false,
   },
 ];

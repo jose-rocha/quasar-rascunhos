@@ -6,7 +6,9 @@ import Login from '../pages/LoginPage.vue';
 import PageTabs from '../pages/PageTabs.vue';
 import StyleVHtml from '../pages/StyleVHtml.vue';
 import PagePDF from '../pages/PagePDF.vue';
+import PagePDF2 from '../pages/PagePDF2.vue';
 import CopyClipboard from '../pages/CopyClipboard.vue';
+import ParamsVue from '../pages/ParamsVue.vue';
 
 const routes = [
   {
@@ -22,7 +24,10 @@ const routes = [
       { path: '/tabs', name: 'tabs', component: PageTabs },
       { path: '/style-v-html', name: 'StyleVHtml', component: StyleVHtml },
       { path: '/pdf', name: 'pdf', component: PagePDF },
+      { path: '/pdf2', name: 'pdf2', component: PagePDF2 },
       { path: '/copy-clipboard', name: 'clip-board', component: CopyClipboard },
+      { path: '/params-page/:id', name: 'params-page', component: ParamsVue },
+
     ],
   },
 
