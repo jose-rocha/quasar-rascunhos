@@ -1,5 +1,5 @@
 <template>
-<q-page>
+<q-page class="q-px-md">
   <div class="flex column">
     <span>{{dataStore.counter}}</span>
 
@@ -8,10 +8,10 @@
       <ButtonComponentVue label="dec"  class="bg-red" @click="store.decrement()" />
     </div>
   </div>
+
   <router-link to="/pagina3">Ir para página 3</router-link>
 
-   <q-select v-model="valor" :options="valoresParcelas"
-   label="Qtd. Parcelas"/>
+   <q-select v-model="valor" :options="valoresParcelas" label="Qtd. Parcelas"/>
 
   <div>valor total a pagar é: R${{200 / valor}}</div>
 
@@ -20,16 +20,7 @@
     <span >{{mudaValor.title}}</span>
   </div>
 
-  <ul>
-    <li>
-      <RouterLink
-        v-for="(post, index) in posts"
-        :key="index"
-        to="/params-page/id{{post}}">
-        Post {{post}}.
-      </RouterLink>
-    </li>
-  </ul>
+  <ListVue />
 </q-page>
 </template>
 
@@ -38,11 +29,13 @@ import { counterStore } from 'src/stores/count';
 import { useMeta } from 'quasar';
 import { ref, reactive } from 'vue';
 import ButtonComponentVue from 'src/components/ButtonComponent.vue';
+import ListVue from 'src/components/ListVue.vue';
 
 const store = counterStore();
 const dataStore = store.$state;
 
 const valor = ref(1);
+valor.value.toFixed(2);
 const valoresParcelas = [1, 2, 3, 4, 5];
 
 const metaData = {
@@ -55,6 +48,4 @@ const mudaValor = reactive({
   title: 'Usando o Reactive',
 });
 useMeta(metaData);
-
-const posts = [1, 2, 3];
 </script>
