@@ -22,11 +22,14 @@
 
     <q-skeleton height="40px" width="300px" v-if="!skeletonStatus"/>
 
+    <span>{{mutate}}</span>
+    <span>{{mutate2}}</span>
+
   </q-page>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onBeforeMount, onMounted } from 'vue';
 import { useMeta } from 'quasar';
 
 const skeletonStatus = ref(false);
@@ -42,4 +45,17 @@ const metaData = {
 
 useMeta(metaData);
 
+const mutate = ref('');
+
+onBeforeMount(() => {
+  const morph = 'Trazendo o texto do onBeforeMount';
+  mutate.value = morph;
+});
+
+const mutate2 = ref('');
+
+onMounted((morph = 'Trazendo o texto do onMounted') => {
+  // const morph = 'Trazendo o texto do onMounted';
+  mutate2.value = morph;
+});
 </script>

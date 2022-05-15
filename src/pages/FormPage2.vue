@@ -19,12 +19,43 @@
       </q-form>
 
       <q-date
-        v-model="mesAtual"
-        title="José Rocha"
-        subtitle="Aniversário"
-        class="q-mt-md"
-      />
+      v-model="mesAtual"
+      title="José Rocha"
+      subtitle="Aniversário"
+      class="q-mt-md"
+    />
 
+      <div class="flex q-mt-md q-gutter-sm">
+
+        <q-date v-model="date" :options="optionsCalendar" />
+
+        <!-- <q-select
+          v-model="modelSelect"
+          :options="optionsSelect"
+          label="Dias e horas de atendimento"
+          style="flex:1;"
+        /> -->
+
+      </div>
+        <q-select
+              dark
+              dense
+              color="white"
+              label="Selecione o horário"
+              hint="Clique no Relogio para selecionar"
+              mask="##:##"
+              class="text-blue"
+              v-model="modelSelect"
+              :options="optionsSelect"
+              lazy-rules
+              :rules="[
+              val => val && val.length > 0 || 'Por favor, selecione um horário',
+              ]"
+          >
+          <template v-slot:append>
+            <q-icon name="eva-clock-outline" />
+          </template>
+        </q-select>
     </div>
   </q-page>
 </template>
@@ -38,7 +69,6 @@ const metaData = {
   title: 'Form2',
   titleTemplate: (title) => `${title}`,
 };
-
 useMeta(metaData);
 
 const dataDigitada = ref('');
@@ -55,4 +85,24 @@ window.console.log(anoAtual.value);
 
 // doc.text('Hello world!', 10, 10);
 // doc.save('a4.pdf');
+
+const date = ref('2022/05/01');
+const optionsCalendar = ['2022/05/15', '2022/05/17', '2022/05/20', '2022/05/22', '2022/05/25'];
+
+const modelSelect = ref(null);
+const optionsSelect = ['25/05/2022 07:25', '25/05/2022 07:27', '25/05/2022 08:29', '25/05/2022 09:25', '25/05/2022 10:25'];
 </script>
+
+<!-- <style>
+  .q-field__messages {
+    color: white;
+  }
+  .q-field__label{
+    color: white;
+
+  }
+  .q-field__native {
+    color: white;
+  }
+  .q-field__control-container { color: white; border-color: white;}
+</style> -->

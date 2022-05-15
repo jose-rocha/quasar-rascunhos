@@ -1,6 +1,8 @@
 <template>
-  <div class="q-pa-md">
-      <div class="q-gutter-y-md" style="max-width: 600px">
+  <!-- <div class="q-pa-md"> -->
+  <div >
+      <!-- <div class="q-gutter-y-md" style="max-width: 600px"> -->
+      <div class="no-margin">
         <q-card>
           <q-footer>
             <q-tabs

@@ -16,3 +16,9 @@
   </div>
   </q-page>
 </template>
+
+<!-- <script setup>
+const n = 1;
+
+window.console.log(n);
+</script> -->
